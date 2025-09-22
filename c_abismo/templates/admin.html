@@ -51,7 +51,7 @@
               {% else %}Invitado{% endif %}
             </td>
             <td>
-              <a href="" class="btn btn-sm btn-primary">Editar</a>
+              <a href="{% url 'mod_perfil' %}" class="btn btn-sm btn-primary">Editar</a>
               <a  class="btn btn-sm btn-danger eliminar_usuario" data-id="{{ usuario.id }}" >Eliminar</a>
             </td>
           </tr>
