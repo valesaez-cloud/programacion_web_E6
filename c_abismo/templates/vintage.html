@@ -1,0 +1,44 @@
+{% load static %}
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="Crónicas del Abismo" content="width=device-width, initial-scale=1.0">
+    <title>Vintage - Crónicas del Abismo</title>
+    <link rel="stylesheet" href="{% static 'css/styles_g3.css' %}">
+</head>
+<body>
+
+    <header>
+        {% include "segments/header.html" %}  
+    </header>
+
+    <div class="banner">
+        <p> Adentrate a las Antiguas Joyas del Gaming.</p>
+    </div>
+
+    <h2>Catálogo Vintage</h2>
+
+    <!--ficha del primer juego-->
+    <div class="game-container">
+        <div class="game-card">
+            <img src="{% static 'img/mario.jpg' %}" alt="mario" height="300">
+            <h3>Mario Bros</h3>
+            <p>Mario Bros es un clasico de plataformas virtuales, donde mario debe superar obstaculos y enemigos para rescartar a la princesa</p>
+            <p class="price">CLP$ 10.000</p>
+        </div>
+
+        <!-- Ficha del segundo juego -->
+        <div class="game-card">
+            <img src="{% static 'img/sonic.jpg' %}" alt="sonic" height="300">
+            <h3>Sonic The Hedgehog</h3>
+            <p>Sonic The Hedgehog es un juego de plataformas, donde Sony un erizo veloz corre a gran velocidad, superando enemigos y recolectando anillos</p>
+            <p class="price">CLP$ 15.000</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy;2025 Crónicas del Abismo. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+{% load static %}
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="Cronicas del Abismo" content="width=device-width, initial-scale=1.0">
+    <title> RPG - Cronicas del Abismo</title>     
+    <link rel="stylesheet" href="{% static 'css/styles_g3.css' %}">
+</head>
+<body>
+    <header>
+        {% include "segments/header.html" %}  
+    </header>
+
+     <div class="banner">
+        <p>Sumergete en el abismo de historias epicas.</p>
+    </div>
+<h2>Catálogo de RPG</h2>
+
+    <!--ficha del primer juego-->
+    <div class="game-container">
+        <div class="game-card">
+            <img src="{% static 'img/Honkai star rail.png' %}" alt="Honkai" height="300">
+            <h3>Honkai: Star Rail</h3>
+            <p>Honkai: Star Rail es un videojuego de rol (miHoYo). El juego presenta al personaje principal, conocido como el Trailblazer, viajando por el universo a través del Astral Express para ayudar y conectar los mundos mientras participa en la resolución de desastres causados por los "Stellarons" y otros agentes externos.</p>
+            <p class="price">CLP$ 5.990</p>
+        </div>
+
+		
+        <!-- Ficha del segundo juego -->
+        <div class="game-card">
+            <img src="{% static 'img/Persona 5.png' 5}" alt="Persona" height="300">
+            <h3>Persona 5</h3>
+            <p>Persona 5 (Atlus) es un videojuego de rol para las consolas PlayStation 3 y PlayStation 4. Sigue a un grupo de estudiantes de secundaria que llevan una doble vida como "Ladrones Fantasma", quienes roban los "corazones" de adultos corruptos para cambiar sus deseos egoístas. La historia explora temas de justicia, rebelión y la lucha contra una sociedad corrupta a través de la exploración de mundos metafóricos llamados "Palacios" y mazmorras generadas aleatoriamente llamadas "Mementos". </p>
+            <p class="price">CLP$ 52.900</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy;2025 Crónicas del Abismo. Todos los derechos reservados.</p>
+    </footer>
+
+  
+</html>

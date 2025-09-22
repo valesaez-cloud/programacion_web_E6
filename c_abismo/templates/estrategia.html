@@ -1,0 +1,51 @@
+{% load static %}
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="Cronicas del Abismo" content="width=device-width, initial-scale=1.0">
+    <title> Estrategia - Cronicas del Abismo</title>     
+    <link rel="stylesheet" href="{% static 'css/styles_g3.css' %}">
+  </head>
+  <body>
+
+    <header>
+      {% include "segments/header.html" %}  
+    </header>
+
+    <div class="banner">
+        <p>Estrategia Sin Limites, Victoria Innegable.</p>
+    </div>
+    
+    <h2>Catálogo de Estrategia</h2>
+
+    <!-- Ficha del primer juego -->
+    <div class="game-container">
+        <div class="game-card">
+            <img src="{% static 'img/Warcraft 3.png' %}" alt="Warcraft III" height="300">
+            <h3>Warcraft III: Reign of Chaos</h3>
+            <p>
+              Warcraft III: Reign of Chaos es un videojuego de estrategia en tiempo real que narra la historia de la guerra entre la Horda y la Alianza en el mundo de Azeroth, 
+              centrándose en la llegada de la Legión Ardiente y la corrupción de Arthas Menethil. 
+              El juego presenta cuatro razas jugables: Humanos, Orcos, Elfos Nocturnos y No-Muertos, 
+              cada una con sus propias unidades, habilidades y héroes únicos.
+            </p>
+            <p class="price">CLP$ 19.990</p>
+        </div>
+
+        <!-- Ficha del segundo juego -->
+        <div class="game-card">
+            <img src="{% static 'img/Starcraft 2.png' %}" alt="StarCraft II" height="300">
+            <h3>StarCraft II</h3>
+            <p>
+              StarCraft II es una épica batalla intergaláctica entre tres razas únicas (Terran, Zerg y Protoss), 
+              con una rica historia llena de traición, venganza y redención.
+            </p>
+            <p class="price">CLP$ 29.900</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy;2025 Crónicas del Abismo. Todos los derechos reservados.</p>
+    </footer>
+  </body>
+</html>

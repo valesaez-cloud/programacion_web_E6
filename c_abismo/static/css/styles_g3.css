@@ -1,0 +1,674 @@
+@charset "utf-8";
+
+/* Fuente gamer */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
+
+* { font-family: 'Orbitron', sans-serif; }
+
+/* Base del documento */
+html, body {
+    background-color: #000;
+    color: silver;               /* visible sobre negro */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    min-height: 100vh;
+    height: 100%;
+    /* Si quieres, puedes dejar el body sin flex: no es necesario aquí */
+}
+
+body {
+    padding-top: 80px; /* deja espacio para el header fijo */
+}
+
+/* Header con gradiente oscuro */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: linear-gradient(180deg, #2b2b2b 0%, #1a1a1a 50%, #000 100%);
+    position: fixed;
+    width: 100%;
+    top: 0; left: 0;
+    z-index: 1000;
+}
+
+/* Logo en el header */
+header img { height: 60px; }
+
+/* Navegación */
+nav { margin-right: 2%; }
+nav a {
+    color: silver;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+/* Títulos */
+h1 {
+    font-size: 2em;
+    margin: 0;
+    color: #e0e0e0;
+}  /* <- ESTA llave faltaba */
+
+h2 {
+    margin-top: 5%;
+    font-size: 1.6em;
+    color: #ff5722;
+}
+
+/* (Quito position:center; no existe) */
+.logo_container { 
+    font-size: 1.3em; 
+}
+
+/* Si usas un subtítulo superpuesto, mejor con posicionamiento relativo del padre */
+.logo_container span { 
+    position: absolute; 
+    top: 30%; 
+}
+
+/* Banner con imagen */
+.banner {
+    background: url("../img/banner_nuevo.jpg")no-repeat center/cover;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+/* ===== CATEGORÍAS ===== */
+.categorias {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;          /* permite varias filas */
+    gap: 24px;
+    margin: 80px auto 56px;   /* las baja un poco */
+    padding: 2% 0;
+    max-width: 1100px;
+}
+
+/* Tarjeta de categoría */
+.categorias > div {
+    flex: 0 1 220px;          /* <- aquí faltaba ":" */
+    width: 220px;             /* puedes quitarla si prefieres solo la línea de flex */
+    margin: 15px;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Imagen de la tarjeta */
+.categorias > div img {
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+    display: block;
+    transition: filter .3s ease-in-out, transform .3s ease-in-out;
+}
+
+/* Hover gamer */
+.categorias > div:hover img {
+    filter: grayscale(100%);
+    transform: scale(1.1);
+}
+
+/* Título de cada categoría */
+.categorias h3 { 
+    padding: 10px;
+    margin: 0;
+    font-size: 1em;
+    color: #ffb74d; /* dorado suave */
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: #bbb;
+    text-align: center;
+    padding: 15px;
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+/* Logo en el footer */
+footer .logo_container { 
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+footer .logo_container img {
+    max-width: 100px;
+    height: auto;
+}
+footer .logo_container span {
+    font-size: 1.5em;
+    white-space: nowrap;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    footer .logo_container {
+        flex-direction: column;
+        text-align: center;
+    }
+    footer .logo_container img { max-width: 80px; }
+    footer .logo_container span { font-size: 1.2em; }
+}
+
+/* Estilos para Formularios - PRUEBA */
+.card {
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+/* Estilos para mensajes de error -PRUEBA*/
+.error-message {
+    font-size: 14px;
+    display: none;
+
+}
+/* Ajusta tamaño y posición del formulario */
+.card {
+  max-width: 420px;      /* más ancho */
+  margin: 0 auto;        /* lo centra horizontalmente */
+  padding: 24px;         /* más espacio interno */
+  font-size: 1.1rem;     /* agranda un poco el texto */
+}
+
+/* Inputs un poco más grandes */
+.form-control {
+  padding: 14px;
+  font-size: 1rem;
+}
+
+/* Botón más alto */
+.btn {
+  padding: 14px;
+  font-size: 1rem;
+}
+/* Inputs oscuros */
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #3a3a3a;
+  border-radius: 10px;
+  background: #0f0f0f;
+  color: #f2f2f2;
+  font-size: 1rem;
+}
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+  color: #888;
+}
+
+/* Botón gamer */
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #6aa0ff, #3c77ff);
+  color: #0b1020;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform .2s, filter .2s;
+}
+button:hover {
+  filter: brightness(1.1);
+  transform: scale(1.03);
+}
+@charset "utf-8";
+
+/* Fuente gamer */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
+
+* { font-family: 'Orbitron', sans-serif; }
+
+/* Base del documento */
+html, body {
+    background-color: #000;
+    color: silver;               /* visible sobre negro */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    min-height: 100vh;
+    height: 100%;
+    /* Si quieres, puedes dejar el body sin flex: no es necesario aquí */
+}
+
+body {
+    padding-top: 80px; /* deja espacio para el header fijo */
+}
+
+/* Header con gradiente oscuro */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: linear-gradient(180deg, #2b2b2b 0%, #1a1a1a 50%, #000 100%);
+    position: fixed;
+    width: 100%;
+    top: 0; left: 0;
+    z-index: 1000;
+}
+
+/* Logo en el header */
+header img { height: 60px; }
+
+/* Navegación */
+nav { margin-right: 2%; }
+nav a {
+    color: silver;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+/* Títulos */
+h1 {
+    font-size: 2em;
+    margin: 0;
+    color: #e0e0e0;
+}  /* <- ESTA llave faltaba */
+
+h2 {
+    margin-top: 5%;
+    font-size: 1.6em;
+    color: #ff5722;
+}
+
+/* (Quito position:center; no existe) */
+.logo_container { 
+    font-size: 1.3em; 
+}
+
+/* Si usas un subtítulo superpuesto, mejor con posicionamiento relativo del padre */
+.logo_container span { 
+    position: absolute; 
+    top: 30%; 
+}
+
+/* Banner con imagen */
+.banner {
+    background: url("../img/banner_nuevo.jpg")no-repeat center/cover;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+/* ===== CATEGORÍAS ===== */
+.categorias {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;          /* permite varias filas */
+    gap: 24px;
+    margin: 80px auto 56px;   /* las baja un poco */
+    padding: 2% 0;
+    max-width: 1100px;
+}
+
+/* Tarjeta de categoría */
+.categorias > div {
+    flex: 0 1 220px;          /* <- aquí faltaba ":" */
+    width: 220px;             /* puedes quitarla si prefieres solo la línea de flex */
+    margin: 15px;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Imagen de la tarjeta */
+.categorias > div img {
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+    display: block;
+    transition: filter .3s ease-in-out, transform .3s ease-in-out;
+}
+
+/* Hover gamer */
+.categorias > div:hover img {
+    filter: grayscale(100%);
+    transform: scale(1.1);
+}
+
+/* Título de cada categoría */
+.categorias h3 { 
+    padding: 10px;
+    margin: 0;
+    font-size: 1em;
+    color: #ffb74d; /* dorado suave */
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: #bbb;
+    text-align: center;
+    padding: 15px;
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+/* Logo en el footer */
+footer .logo_container { 
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+footer .logo_container img {
+    max-width: 100px;
+    height: auto;
+}
+footer .logo_container span {
+    font-size: 1.5em;
+    white-space: nowrap;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    footer .logo_container {
+        flex-direction: column;
+        text-align: center;
+    }
+    footer .logo_container img { max-width: 80px; }
+    footer .logo_container span { font-size: 1.2em; }
+}
+
+/* Estilos para Formularios - PRUEBA */
+.card {
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+/* Estilos para mensajes de error -PRUEBA*/
+.error-message {
+    font-size: 14px;
+    display: none;
+
+}
+/* Ajusta tamaño y posición del formulario */
+.card {
+  max-width: 420px;      /* más ancho */
+  margin: 0 auto;        /* lo centra horizontalmente */
+  padding: 24px;         /* más espacio interno */
+  font-size: 1.1rem;     /* agranda un poco el texto */
+}
+
+/* Inputs un poco más grandes */
+.form-control {
+  padding: 14px;
+  font-size: 1rem;
+}
+
+/* Botón más alto */
+.btn {
+  padding: 14px;
+  font-size: 1rem;
+}
+/* Inputs oscuros */
+#registroForm input[type="text"],
+#registroForm input[type="email"],
+#registroForm input[type="password"],
+#registroForm input[type="tel"],
+#registroForm input[type="number"],
+#registroForm select,
+#registroForm textarea,
+#registroForm .form-control,
+#registroForm .form-select {
+  width: 100%;
+  padding: 12px 14px;
+  margin: 8px 0 14px;
+  border: 1px solid #3a3a3a;
+  border-radius: 10px;
+  background: #0f0f0f;
+  color: #f2f2f2;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+#registroForm input::placeholder,
+#registroForm textarea::placeholder { color: #888; }
+
+#registroForm input:focus,
+#registroForm select:focus,
+#registroForm textarea:focus {
+  outline: none;
+  border-color: #6aa0ff;
+  box-shadow: 0 0 0 3px rgba(106,160,255,.25);
+}
+
+/* Botón Registrar del registro */
+#registroForm .btn,
+#registroForm button,
+#registroForm input[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #3ad167, #1aa14a); /* verde */
+  color: #06140c;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform .2s, filter .2s;
+}
+#registroForm .btn:hover,
+#registroForm button:hover,
+#registroForm input[type="submit"]:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+/* Enlaces debajo del formulario */
+.auth-links {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.auth-links a {
+  display: block;          /* cada link en su propia línea */
+  margin-top: 6px;         /* separación entre ellos */
+  color: #9fb8ff;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.auth-links a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+/* Perfil*/
+.perfil-container {
+    background-color: #222;    
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 0 auto;
+    border: 1x;
+    border-color: #FFA500;
+}
+.is-invalid { border: 1px solid #dc3545 !important; }
+.error-message { 
+  color: #dc3545; 
+  font-size: .9rem; 
+  margin-top: 4px; 
+  display: none; 
+}
+/* Variables suaves (opcional) */
+:root{
+  --g3-bg:#0f0f0f;
+  --g3-fg:#f2f2f2;
+  --g3-bd:#3a3a3a;
+  --g3-acc1:#6aa0ff;
+  --g3-acc2:#3c77ff;
+  --g3-err:#dc3545;
+}
+
+.login-zone{
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+}
+
+/* TARJETA visual donde va el form */
+.card{
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 14px;
+  padding: 24px;
+  margin: 0 auto;
+  max-width: 520px;
+  box-shadow: 0 8px 28px rgba(0,0,0,.35);
+}
+
+/* Títulos dentro del form (si los usas) */
+.card h1,.card h2,.card h3{
+  margin: 0 0 16px;
+  color: #fff;
+}
+
+/*
+   INPUTS/BOTONES por FORMULARIO
+ */
+#loginForm .form-control,
+#registroForm .form-control,
+#actualizarForm .form-control,
+#recuperarForm .form-control,
+#registroForm .form-select,
+#actualizarForm .form-select,
+#recuperarForm .form-select{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  margin: 10px 0 14px;          /* separación vertical */
+  border: 1px solid var(--g3-bd);
+  border-radius: 10px;
+  background: var(--g3-bg);
+  color: var(--g3-fg);
+  font-size: 1rem;
+}
+
+#loginForm .form-control:focus,
+#registroForm .form-control:focus,
+#actualizarForm .form-control:focus,
+#recuperarForm .form-control:focus,
+#registroForm .form-select:focus,
+#actualizarForm .form-select:focus,
+#recuperarForm .form-select:focus{
+  outline: none;
+  border-color: var(--g3-acc1);
+  box-shadow: 0 0 0 3px rgba(106,160,255,.25);
+}
+
+/* Botones */
+#loginForm .btn,
+#registroForm .btn,
+#actualizarForm .btn,
+#recuperarForm .btn{
+  display: inline-block;
+  width: 100%;
+  padding: 12px;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+#loginForm .btn-primary,
+#registroForm .btn-primary,
+#actualizarForm .btn-primary,
+#recuperarForm .btn-primary,
+#registroForm .btn-success,
+#actualizarForm .btn-success{
+  background: linear-gradient(180deg, var(--g3-acc1), var(--g3-acc2));
+  color: #0b1020;
+}
+#loginForm .btn:hover,
+#registroForm .btn:hover,
+#actualizarForm .btn:hover,
+#recuperarForm .btn:hover{
+  filter: brightness(1.08);
+}
+
+/* Enlaces secundarios debajo del botón (login) */
+.auth-links{
+  margin-top: 10px;
+}
+.auth-links a{
+  display:block;
+  text-decoration:none;
+  color:#a5b4ff;
+  margin-top:8px;
+}
+.auth-links a:hover{ text-decoration: underline; }
+
+/* MENSAJES DE ERROR*/
+.error-message{
+  display: none;                /* el JS hace .show() al validar */
+  color: var(--g3-err);
+  font-size: .9rem;
+  margin-top: -6px;             /* queda pegado al input */
+  margin-bottom: 8px;
+}
+.form-control.is-invalid,
+.form-select.is-invalid{
+  border: 1px solid var(--g3-err) !important;
+  box-shadow: 0 0 0 3px rgba(220,53,69,.25) !important;
+}
+
+@media (max-width: 480px){
+  .card{ padding: 18px; }
+  #loginForm .form-control,
+  #registroForm .form-control,
+  #actualizarForm .form-control,
+  #recuperarForm .form-control{ font-size: .95rem; }
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5rem 1rem;
+}
+
+.menu-left a {
+  margin-right: 1rem;
+  text-decoration: none;
+}
+
+.menu-right {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.user-greeting {
+  font-size: 0.95rem;
+  color: #fff; /* o el color que estés usando */
+}

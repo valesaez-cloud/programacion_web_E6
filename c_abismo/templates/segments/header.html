@@ -1,0 +1,26 @@
+{% load static %}
+<header>
+    <div class="logo_container">
+            <img src="{% static 'img/logoSup.jpg' %}" alt="Logo del sitio" class="logo">
+    </div>
+    <nav>
+    <a href="{% url 'home' %}">Inicio</a>
+    <a href="{% url 'marca' %}">Quienes Somos</a>
+
+    {% if usuario_nombre %}
+        <div id="perfil_usuario">
+            Hola, Bienvenido {{ usuario_nombre }}
+            <ul>
+                <li><a href="{% url 'mi_perfil' %}">Mi Perfil</a></li>
+                    {% if request.session.usuario_rol == 1 or request.session.usuario_rol == '1' %}
+                        <li><a href="{% url 'listar_usuarios' %}">Administrar Usuarios</a></li>
+                    {% endif %}
+                <li><a href="{% url 'cerrar_sesion' %}">Cerrar Sesión</a></li>
+            </ul>
+        </div>
+    {% else %}
+        <a href="{% url 'registrar' %}">Registrarse</a>
+        <a href="{% url 'login' %}">Iniciar Sesión</a>
+    {% endif %}
+</nav>
+</header>

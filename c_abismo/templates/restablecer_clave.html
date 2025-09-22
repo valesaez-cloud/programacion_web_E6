@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Restablecer Contraseña</title>
+  <link rel="stylesheet" href="{% static 'css/styles_g3.css' %}">
+</head>
+<body>
+
+  <h2>Restablecer Contraseña</h2>
+
+  <form id="restablecerForm" class="card" method="post" action="/resta_clave">
+    <div class="mb-3">
+      <input id="clave1" class="form-control" type="password" placeholder="Nueva contraseña">
+      <div class="error-message"></div>
+    </div>
+    <div class="mb-3">
+      <input id="clave2" class="form-control" type="password" placeholder="Repite la contraseña">
+      <div class="error-message"></div>
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+  </form>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="{% static 'js/rest_clave.js' %}"></script>
+</body>
+</html>

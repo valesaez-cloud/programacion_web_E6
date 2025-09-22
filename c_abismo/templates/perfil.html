@@ -1,0 +1,36 @@
+{% load static %}
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="Cronicas del Abismo" content="width=device-width, initial-scale=1.0">
+    <title> Perfil - Cronicas del Abismo</title>     
+    <link rel="stylesheet" href="{% static 'css/styles_g3.css' %}">
+  </head>
+  <body>
+
+    <header>
+      <nav>
+        {% include "segments/header.html" %}  
+    </header>
+
+    <div class="banner">
+      <p>Cronicas del Abismo</p>
+    </div>
+    <h2>Perfil</h2>
+    <h2>Cronicas del Abismo</h2>
+    <div class="perfil-container">    
+      <img src="{% static 'img/foto_perfil.png' %}" alt="foto_perfil" height="300">        
+    </div>
+			
+    <!-- Botón de Modif Datos -->					
+    <div class="auth-links">
+      <a></a>
+      <a></a>
+      <a href="{% url 'mod_perfil' %}" class="btn btn-link w-100 mt-2">¿Necesitas modificar tus datos? Ingresa aqui </a>
+    </div>
+
+    <footer>
+      <p>&copy;2025 Crónicas del Abismo. Todos los derechos reservados.</p>
+    </footer>
+  </body>
+</html>

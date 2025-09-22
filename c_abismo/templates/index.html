@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Cronicas del Abismo" content="width=device-width, initial-scale=1.0">
+    <title>Cronicas del Abismo</title> 
+    <link rel="stylesheet" href="{% static 'css/styles_g3.css' %}">
+</head>
+<body>
+    {% include "segments/header.html" %}
+
+     <div class="banner">
+        <h1>Cronicas del Abismo</h1>
+		<p>¡Disfruta de los mejores juegos y vive momentos inolvidables junto a tus amigos!</p>
+    </div>
+
+    <h2>Tipos de Juegos</h2>
+
+    <div class="categorias">
+        <div class="Survival" onclick="location.href='{% url 'survival' %}'">
+            <h3>Survival</h3>
+			<img src="{% static 'img/Survival.png' %}" alt="Survival" height="20">            
+        </div>
+        <div class="RPG" onclick="location.href='{% url 'rpg' %}'">
+            <h3>RPG</h3>
+			<img src="{% static 'img/juegos_rol.png' %}" alt="RPG" height="20">            
+        </div>
+        <div class="Horror" onclick="location.href='{% url 'horror' %}'">
+            <h3>Horror</h3>
+			<img src="{% static 'img/horror.png' %}" alt="Horror" height="20">			    
+        </div>
+        <div class="Estrategia" onclick="location.href='{% url 'estrategia' %}'">
+            <h3>Estrategia</h3>
+			<img src="{% static 'img/estrategia.png' %}" alt="Estrategia" height="20">            
+        </div>
+        <div class="Vintage" onclick="location.href='{% url 'vintage' %}'">
+			<h3>Vintage</h3>
+            <img src="{% static 'img/vintage.png' %}" alt="Vintage" height="20">            
+        </div>
+    </div>
+
+     <footer>
+        <p>&copy;2025 Cronicas del Abismo. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

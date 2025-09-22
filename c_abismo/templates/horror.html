@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Cronicas del Abismo" content="width=device-width, initial-scale=1.0">
+    <title>Horror - Crónicas del Abismo</title>
+    <link rel="stylesheet" href="{% static 'css/styles_g3.css' %}">
+</head>
+<body>
+    <header>
+        {% include "segments/header.html" %}  
+    </header>
+
+    <div class="banner">
+        <p>Los más aterradores.</p>
+    </div>
+
+    <h2>Catálogo de Horror</h2>
+
+    <!-- Ficha del primer juego -->
+    <div class="game-container">
+        <div class="game-card">
+            <img src="{% static 'img/terror_1.jpg' %}" alt="The Joy Of Creation: Story Mode" height="300">
+            <h3>The Joy Of Creation: Story Mode</h3>
+            <p>
+              The Joy of Creation: Story Mode (TJoC:SM) es un juego de terror de supervivencia libre, la segunda entrega de la serie The Joy of Creation, conocida por su atmósfera inmersiva e intensa. 
+              Los jugadores navegan por una casa oscura y espeluznante llena de amenazas animatrónicas, luchando contra versiones animatrónicas de personajes de Five Nights at Freddy's.
+            </p>
+            <p class="price">CLP$ 5.990</p>
+        </div>
+
+        <!-- Ficha del segundo juego -->
+        <div class="game-card">
+            <img src="{% static 'img/terror_2.jpg' %}" alt="Resident Evil 6" height="300">
+            <h3>Resident Evil 6</h3>
+            <p>
+              Resident Evil 6 es un juego de acción y terror de 2012 que combina el horror de supervivencia tradicional con intensas secuencias de acción. 
+              Presenta múltiples campañas entrelazadas protagonizadas por Leon S. Kennedy, Chris Redfield, Jake Muller y Ada Wong, 
+              mientras se enfrentan a un ataque bioterrorista global.
+            </p>
+            <p class="price">CLP$ 15.000</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy;2025 Crónicas del Abismo. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
